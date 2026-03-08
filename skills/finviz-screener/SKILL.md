@@ -94,8 +94,11 @@ Map the user's natural-language request to FinViz filter codes. Use the Common C
 | Pullback from high | 高値からの押し目 | `ta_highlow52w_10to30-bhx` |
 | Near 52W low reversal | 安値圏リバーサル | `ta_highlow52w_10to30-alx` |
 | Fallen angel | 急落後反発 | `ta_highlow52w_b20to30h,ta_rsi_os40` |
-| AI theme | AIテーマ | `theme_artificialintelligence` |
-| Cybersecurity theme | サイバーセキュリティ | `theme_cybersecurity` |
+| AI theme | AIテーマ | `--themes "artificialintelligence"` |
+| Cybersecurity theme | サイバーセキュリティ | `--themes "cybersecurity"` |
+| AI + Cybersecurity | AI＆サイバーセキュリティ | `--themes "artificialintelligence,cybersecurity"` |
+| AI Cloud sub-theme | AIクラウド | `--subthemes "aicloud"` |
+| AI Compute sub-theme | AI半導体 | `--subthemes "aicompute"` |
 | Yield 3-8% (trap excluded) | 配当3-8%（トラップ除外）| `fa_div_3to8` |
 | Mid-range P/E | 適正PER帯 | `fa_pe_10to20` |
 | EV undervalued | EV割安 | `fa_evebitda_u10` |
@@ -113,12 +116,14 @@ Map the user's natural-language request to FinViz filter codes. Use the Common C
 Before executing, present the selected filters in a table for user confirmation:
 
 ```markdown
-| Filter Code | Meaning |
-|---|---|
-| cap_small | Small Cap ($300M–$2B) |
-| fa_div_o3 | Dividend Yield > 3% |
-| fa_pe_u20 | P/E < 20 |
-| geo_usa | USA |
+| Type | Value | Meaning |
+|---|---|---|
+| Theme | artificialintelligence | Artificial Intelligence |
+| Sub-theme | aicloud | AI - Cloud & Infrastructure |
+| Filter | cap_small | Small Cap ($300M–$2B) |
+| Filter | fa_div_o3 | Dividend Yield > 3% |
+| Filter | fa_pe_u20 | P/E < 20 |
+| Filter | geo_usa | USA |
 
 View: Overview (v=111)
 Mode: Public / Elite (auto-detected)
@@ -134,14 +139,30 @@ Run the screener script to build the URL and open Chrome:
 python3 scripts/open_finviz_screener.py \
   --filters "cap_small,fa_div_o3,fa_pe_u20,geo_usa" \
   --view overview
+
+# Theme-only screening (no --filters required)
+python3 scripts/open_finviz_screener.py \
+  --themes "artificialintelligence,cybersecurity" \
+  --url-only
+
+# Theme + sub-theme + filters combined
+python3 scripts/open_finviz_screener.py \
+  --themes "artificialintelligence" \
+  --subthemes "aicloud,aicompute" \
+  --filters "cap_midover" \
+  --url-only
 ```
 
 **Script arguments:**
-- `--filters` (required): Comma-separated filter codes
+- `--filters` (optional): Comma-separated filter codes. **Note:** `theme_*` and `subtheme_*` tokens are not allowed here — use `--themes` / `--subthemes` instead.
+- `--themes` (optional): Comma-separated theme slugs (e.g., `artificialintelligence,cybersecurity`). Accepts bare slugs or `theme_`-prefixed values.
+- `--subthemes` (optional): Comma-separated sub-theme slugs (e.g., `aicloud,aicompute`). Accepts bare slugs or `subtheme_`-prefixed values.
 - `--elite`: Force Elite mode (auto-detected from `$FINVIZ_API_KEY` if not set)
 - `--view`: View type — overview, valuation, financial, technical, ownership, performance, custom
 - `--order`: Sort order (e.g., `-marketcap`, `dividendyield`, `-change`)
 - `--url-only`: Print URL without opening browser
+
+At least one of `--filters`, `--themes`, or `--subthemes` must be provided.
 
 ### Step 5: Report Results
 
@@ -258,6 +279,26 @@ Real-world screening patterns distilled from repeated use. Each recipe includes 
 | `sh_relvol_o1.5` | Relative volume > 1.5x |
 | `sh_avgvol_o1000` | Avg volume > 1M |
 | `cap_midover` | Mid cap and above |
+
+### Recipe 6: Theme Screening (AI + Sub-theme Drill-Down)
+
+**Goal:** Find mid-cap+ AI stocks focused on cloud infrastructure and compute acceleration.
+
+```
+--themes "artificialintelligence"
+--subthemes "aicloud,aicompute"
+--filters "cap_midover"
+--view overview
+```
+
+| Type | Value | Purpose |
+|---|---|---|
+| Theme | `artificialintelligence` | AI theme universe |
+| Sub-theme | `aicloud` | Cloud & Infrastructure vertical |
+| Sub-theme | `aicompute` | Compute & Acceleration vertical |
+| Filter | `cap_midover` | Mid cap and above |
+
+**Multi-theme example:** `--themes "artificialintelligence,cybersecurity"` selects stocks tagged with either theme (OR logic via `|` grouping).
 
 ### Tips: Iterative Refinement Pattern
 

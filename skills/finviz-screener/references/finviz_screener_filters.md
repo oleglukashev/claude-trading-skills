@@ -1245,74 +1245,496 @@ Special: `pos` (>0%), `neg` (<0%), `verypos` (>20%), `veryneg` (<20%)
 
 ## Thematic Filters
 
+Theme and sub-theme filters are available on both **public** `finviz.com` and **Elite** `elite.finviz.com`. No Elite subscription is required.
 
-### Theme (`theme_`)
+**CLI Usage:**
 
+- Use `--themes` for theme slugs: `--themes "artificialintelligence,cybersecurity"`
+- Use `--subthemes` for sub-theme slugs: `--subthemes "aicloud,aicompute"`
+- **Do NOT** pass `theme_*` or `subtheme_*` tokens via `--filters` — the script will reject them with a clear error message.
 
-| Code | Meaning | Natural Language Keywords |
-|------|---------|---------------------------|
-| `theme_agingpopulationlongevity` | Aging Population & Longevity |  |
-| `theme_agriculturefoodtech` | Agriculture & FoodTech |  |
-| `theme_artificialintelligence` | Artificial Intelligence | AI, 人工知能 |
-| `theme_autonomoussystems` | Autonomous Systems | autonomous, 自律システム |
-| `theme_bigdata` | Big Data | big data, ビッグデータ |
-| `theme_biometrics` | Biometrics |  |
-| `theme_cloudcomputing` | Cloud Computing | cloud, クラウド |
-| `theme_commoditiesagriculture` | Commodities - Agriculture |  |
-| `theme_commoditiesenergy` | Commodities - Energy |  |
-| `theme_commoditiesmetals` | Commodities - Metals |  |
-| `theme_consumergoods` | Consumer Goods |  |
-| `theme_cryptoblockchain` | Crypto & Blockchain | crypto, 暗号通貨, ブロックチェーン |
-| `theme_cybersecurity` | Cybersecurity | cybersecurity, サイバーセキュリティ |
-| `theme_defenseaerospace` | Defense & Aerospace |  |
-| `theme_digitalentertainment` | Digital Entertainment |  |
-| `theme_ecommerce` | E-commerce | e-commerce, EC |
-| `theme_educationtechnology` | Education Technology |  |
-| `theme_electricvehicles` | Electric Vehicles | EV, 電気自動車 |
-| `theme_energyrenewable` | Energy - Renewable | renewable, 再生可能エネルギー |
-| `theme_energytraditional` | Energy - Traditional |  |
-| `theme_environmentalsustainability` | Environmental Sustainability |  |
-| `theme_fintech` | FinTech | fintech, フィンテック |
-| `theme_hardware` | Hardware | hardware, ハードウェア |
-| `theme_healthcarebiotech` | Healthcare & Biotech | biotech, バイオテック |
-| `theme_healthyfoodnutrition` | Healthy Food & Nutrition |  |
-| `theme_industrialautomation` | Industrial Automation |  |
-| `theme_internetofthings` | Internet of Things | IoT |
-| `theme_nanotechnology` | Nanotechnology |  |
-| `theme_quantumcomputing` | Quantum Computing | quantum, 量子コンピューティング |
-| `theme_realestatereits` | Real Estate & REITs | REITs, 不動産投資信託 |
-| `theme_robotics` | Robotics | robotics, ロボティクス |
-| `theme_semiconductors` | Semiconductors | semiconductors, 半導体 |
-| `theme_smarthome` | Smart Home |  |
-| `theme_socialmedia` | Social Media |  |
-| `theme_software` | Software | software, ソフトウェア |
-| `theme_spacetech` | Space Tech | space, 宇宙 |
-| `theme_telecommunications` | Telecommunications |  |
-| `theme_transportationlogistics` | Transportation & Logistics |  |
-| `theme_virtualaugmentedreality` | Virtual & Augmented Reality | VR, AR, メタバース |
-| `theme_wearables` | Wearables |  |
+**Grouped URL syntax:** Multiple themes (or sub-themes) are joined with `|` (URL-encoded as `%7C`) in a single token:
 
-### Sub-theme (`subtheme_`)
+```
+f=theme_artificialintelligence%7Ccybersecurity,subtheme_aicloud%7Caicompute,cap_midover
+```
 
+### Theme (`theme_`) — 40 themes
 
-268 sub-themes available. Pattern: `subtheme_{category}{subtopic}`.
+| Slug | Label | Natural Language Keywords |
+|------|-------|---------------------------|
+| `agingpopulationlongevity` | Aging Population & Longevity |  |
+| `agriculturefoodtech` | Agriculture & FoodTech |  |
+| `artificialintelligence` | Artificial Intelligence | AI, 人工知能 |
+| `autonomoussystems` | Autonomous Systems | autonomous, 自律システム |
+| `bigdata` | Big Data | big data, ビッグデータ |
+| `biometrics` | Biometrics |  |
+| `cloudcomputing` | Cloud Computing | cloud, クラウド |
+| `commoditiesagriculture` | Commodities - Agriculture |  |
+| `commoditiesenergy` | Commodities - Energy |  |
+| `commoditiesmetals` | Commodities - Metals |  |
+| `consumergoods` | Consumer Goods |  |
+| `cryptoblockchain` | Crypto & Blockchain | crypto, 暗号通貨, ブロックチェーン |
+| `cybersecurity` | Cybersecurity | cybersecurity, サイバーセキュリティ |
+| `defenseaerospace` | Defense & Aerospace |  |
+| `digitalentertainment` | Digital Entertainment |  |
+| `ecommerce` | E-commerce | e-commerce, EC |
+| `educationtechnology` | Education Technology |  |
+| `electricvehicles` | Electric Vehicles | EV, 電気自動車 |
+| `energyrenewable` | Energy - Renewable | renewable, 再生可能エネルギー |
+| `energytraditional` | Energy - Traditional |  |
+| `environmentalsustainability` | Environmental Sustainability |  |
+| `fintech` | FinTech | fintech, フィンテック |
+| `hardware` | Hardware | hardware, ハードウェア |
+| `healthcarebiotech` | Healthcare & Biotech | biotech, バイオテック |
+| `healthyfoodnutrition` | Healthy Food & Nutrition |  |
+| `industrialautomation` | Industrial Automation |  |
+| `internetofthings` | Internet of Things | IoT |
+| `nanotechnology` | Nanotechnology |  |
+| `quantumcomputing` | Quantum Computing | quantum, 量子コンピューティング |
+| `realestatereits` | Real Estate & REITs | REITs, 不動産投資信託 |
+| `robotics` | Robotics | robotics, ロボティクス |
+| `semiconductors` | Semiconductors | semiconductors, 半導体 |
+| `smarthome` | Smart Home |  |
+| `socialmedia` | Social Media |  |
+| `software` | Software | software, ソフトウェア |
+| `spacetech` | Space Tech | space, 宇宙 |
+| `telecommunications` | Telecommunications |  |
+| `transportationlogistics` | Transportation & Logistics |  |
+| `virtualaugmentedreality` | Virtual & Augmented Reality | VR, AR, メタバース |
+| `wearables` | Wearables |  |
 
-Categories include: `ai`, `automation`, `autonomous`, `bigdata`, `blockchain`, `cloud`, `cybersecurity`, `defense`, `ecommerce`, `education`, `energy`, `entertainment`, `environmental`, `evs`, `fintech`, `hardware`, `healthcare`, `iot`, `longevity`, `nanotech`, `nutrition`, `quantum`, `realestate`, `robotics`, `semis`, `smarthome`, `social`, `software`, `space`, `telecom`.
+### Sub-theme (`subtheme_`) — 268 sub-themes
 
+Pattern: `subtheme_{category}{subtopic}`. Pass bare slugs via `--subthemes`.
 
-**Example codes:**
+#### Agriculture (5)
+| Slug | Label |
+|------|-------|
+| `agriculturealtprotein` | Agriculture - Alternative Proteins |
+| `agriculturecropinputs` | Agriculture - Agricultural Inputs & Crop Science |
+| `agricultureindoorfarming` | Agriculture - Controlled Environment Agriculture |
+| `agricultureprocessing` | Agriculture - Agri-Food Processing & Distribution |
+| `agriculturesmartfarming` | Agriculture - Precision Agriculture & Farm Automation |
 
-| Code | Meaning | Natural Language Keywords |
-|------|---------|---------------------------|
-| `subtheme_aicompute` | AI - Compute & Acceleration | AI半導体 |
-| `subtheme_aicloud` | AI - Cloud & Infrastructure | AIクラウド |
-| `subtheme_aimodels` | AI - Foundation Models & Platforms | AIモデル |
-| `subtheme_semiscompute` | Semis - Logic & CPUs, GPUs, Accelerators | 半導体ロジック |
-| `subtheme_semsmemory` | Semis - Memory & Storage | 半導体メモリ |
-| `subtheme_evsbatteries` | EVs - Batteries & Materials | EVバッテリー |
-| `subtheme_evscharging` | EVs - Charging & Infrastructure | EV充電 |
-| `subtheme_cybersecuritycloud` | Cybersecurity - Cloud Security | クラウドセキュリティ |
-| `subtheme_healthcaregenomics` | Healthcare - Genomics & Personalized Medicine | ゲノム |
+#### AI (13)
+| Slug | Label |
+|------|-------|
+| `aiadssearch` | AI - Ads, Search & Recommendations |
+| `aiagi` | AI - AGI, general intelligence |
+| `aiapplications` | AI - Apps, Domain-Specific AI |
+| `aicloud` | AI - Cloud & Infrastructure |
+| `aicompute` | AI - Compute & Acceleration |
+| `aidata` | AI - Data Infrastructure & Enablement |
+| `aiedge` | AI - Edge & Embedded Systems |
+| `aienergy` | AI - Power & Energy Solutions |
+| `aienterprise` | AI - Enterprise Productivity & Software Integration |
+| `aimodels` | AI - Foundation Models & Platforms |
+| `ainetworking` | AI - Networking & Systems Optimization |
+| `airobotics` | AI - Robotics & Automation |
+| `aisecurity` | AI - Cybersecurity |
+
+#### Automation (7)
+| Slug | Label |
+|------|-------|
+| `automationautomation` | Automation - Factory & Process Automation Systems |
+| `automationdprinting` | Automation - Additive Manufacturing, 3D Printing |
+| `automationiot` | Automation - Industrial IoT, Connectivity |
+| `automationlogistics` | Automation - Smart Logistics & Warehouse Automation |
+| `automationmachinevision` | Automation - Industrial Sensors & Machine Vision |
+| `automationrobotics` | Automation - Industrial Robotics & Autonomous Systems |
+| `automationsoftware` | Automation - Industrial Software & Digital Twin |
+
+#### Autonomous (6)
+| Slug | Label |
+|------|-------|
+| `autonomousavmobility` | Autonomous - Vehicles & Mobility |
+| `autonomousdefense` | Autonomous - Aerospace, Defense & Drones |
+| `autonomousindustrial` | Autonomous - Industrial & Logistics Automation |
+| `autonomousmachinevision` | Autonomous - Sensors & Perception Systems |
+| `autonomoussoftware` | Autonomous - Software & Cloud Infrastructure |
+| `autonomousspecialized` | Autonomous - Maritime, Agriculture & Specialized Autonomy |
+
+#### Big Data (4)
+| Slug | Label |
+|------|-------|
+| `bigdataaiplatforms` | Big Data - AI Platforms & Predictive Analytics |
+| `bigdataanalyticsbi` | Big Data - Analytics & Business Intelligence |
+| `bigdatainfrastructure` | Big Data - Infrastructure & Storage |
+| `bigdataproviders` | Big Data - Data Generation, Sourcing & Providers |
+
+#### Biometrics (4)
+| Slug | Label |
+|------|-------|
+| `biometricsgovdefense` | Biometrics - Government, Defense & Public Security |
+| `biometricshardware` | Biometrics - Biometric Sensors & Hardware |
+| `biometricsidentity` | Biometrics - Identity Verification & Security |
+| `biometricssoftware` | Biometrics - Recognition & Analytics |
+
+#### Blockchain (6)
+| Slug | Label |
+|------|-------|
+| `blockchainenterprise` | Blockchain - Enterprise Blockchain Solutions |
+| `blockchaininfrastructure` | Blockchain - Blockchain Infrastructure |
+| `blockchainmining` | Blockchain - Cryptocurrency Mining & Staking |
+| `blockchainpayments` | Blockchain - Financial Services & Payments |
+| `blockchainplatforms` | Blockchain - Cryptocurrency Platforms |
+| `blockchaintokenization` | Blockchain - Tokenization & Digital Assets |
+
+#### Cloud (12)
+| Slug | Label |
+|------|-------|
+| `clouddatabases` | Cloud - Data Platforms & Databases |
+| `clouddatacenters` | Cloud - Data Centers |
+| `clouddevops` | Cloud - DevOps, Observability |
+| `cloudedge` | Cloud - Edge, CDN, Zero-Trust Networking |
+| `cloudhardware` | Cloud - Hardware, Networking & OEM |
+| `cloudhsaas` | Cloud - Horizontal SaaS & Cloud Applications |
+| `cloudhybridcloud` | Cloud - Hybrid Cloud |
+| `cloudhyperscalers` | Cloud - Hyperscalers |
+| `cloudmulticloud` | Cloud - Multi-Cloud Management |
+| `cloudpaas` | Cloud - Platforms & Services, PaaS |
+| `cloudsecurity` | Cloud - Security |
+| `cloudserverless` | Cloud - Serverless Computing |
+
+#### Comm Agri (5)
+| Slug | Label |
+|------|-------|
+| `commagribiofuels` | Comm Agri - Renewable Fuels & Biofuels |
+| `commagrifertilizers` | Comm Agri - Fertilizers, Crop Inputs & Seeds |
+| `commagrigrains` | Comm Agri - Grains & Oilseeds |
+| `commagrilivestock` | Comm Agri - Livestock & Animal Protein |
+| `commagrisofts` | Comm Agri - Softs & Plantation Crops |
+
+#### Comm Energy (4)
+| Slug | Label |
+|------|-------|
+| `commenergybiofuels` | Comm Energy - Biofuels & Renewable Fuels |
+| `commenergygaslng` | Comm Energy - Natural Gas & LNG |
+| `commenergyoil` | Comm Energy - Crude Oil |
+| `commenergyuranium` | Comm Energy - Uranium & Nuclear Fuels |
+
+#### Comm Metals (7)
+| Slug | Label |
+|------|-------|
+| `commmetalsbattery` | Comm Metals - Battery & Energy Transition Metals |
+| `commmetalsgold` | Comm Metals - Gold |
+| `commmetalsindustrial` | Comm Metals - Industrial & Base Metals |
+| `commmetalsprecious` | Comm Metals - Precious Metals |
+| `commmetalsrareearth` | Comm Metals - Rare Earth & Strategic Materials |
+| `commmetalsrecycling` | Comm Metals - Recycling & Circular Materials |
+| `commmetalssilver` | Comm Metals - Silver |
+
+#### Consumer (6)
+| Slug | Label |
+|------|-------|
+| `consumerapparel` | Consumer - Apparel & E-Commerce Retail |
+| `consumerfarmdirect` | Consumer - Farming & Direct Marketplaces |
+| `consumerfood` | Consumer - Health, Food & Beverages |
+| `consumerhousehold` | Consumer - Smart Homes & Household Products |
+| `consumerluxury` | Consumer - Modern Luxury & Lifestyle |
+| `consumersecondhand` | Consumer - Resale & Sharing Platforms |
+
+#### Cybersecurity (8)
+| Slug | Label |
+|------|-------|
+| `cybersecurityappsecurity` | Cybersecurity - Application Security |
+| `cybersecuritycloud` | Cybersecurity - Cloud Security |
+| `cybersecurityendpoint` | Cybersecurity - Endpoint Security |
+| `cybersecurityidentityiam` | Cybersecurity - Identity & Access Management |
+| `cybersecuritynetwork` | Cybersecurity - Network Security |
+| `cybersecuritysiem` | Cybersecurity - Security Information & Event Management |
+| `cybersecuritythreatops` | Cybersecurity - Threat Intelligence |
+| `cybersecurityzerotrust` | Cybersecurity - Zero Trust |
+
+#### Defense (7)
+| Slug | Label |
+|------|-------|
+| `defenseaviation` | Defense - Next-Generation Aircraft & Maintenance |
+| `defensecyberdefense` | Defense - Cyber Defense & Electronic Warfare |
+| `defensedrones` | Defense - Drones & Anti-Drone Systems |
+| `defensemanufacturing` | Defense - Secure Defense Supply Chains |
+| `defensemissiles` | Defense - Missile Defense & Long-Range Weapons |
+| `defensespacetech` | Defense - Space Technology & Satellite Services |
+| `defenseweapons` | Defense - Precision Weapons & Ammunition Resupply |
+
+#### E-commerce (9)
+| Slug | Label |
+|------|-------|
+| `ecommerceadsmedia` | E-commerce - Retail Media & Advertising |
+| `ecommercedtc` | E-commerce - Direct-to-Consumer |
+| `ecommercegrocery` | E-commerce - Grocery & Local Commerce Platforms |
+| `ecommercelogistics` | E-commerce - Logistics & Delivery |
+| `ecommercemarketplaces` | E-commerce - Online Marketplaces |
+| `ecommerceomnichannel` | E-commerce - Omnichannel Retailers |
+| `ecommerceplatforms` | E-commerce - Platforms |
+| `ecommercesecondhand` | E-commerce - Recommerce, Secondhand Marketplaces |
+| `ecommercesocial` | E-commerce - Social & Influencer Commerce |
+
+#### Education (4)
+| Slug | Label |
+|------|-------|
+| `educationcurriculum` | Education - Digital Curriculum |
+| `educationinfrastructure` | Education - Infrastructure |
+| `educationplatforms` | Education - Online Learning Platforms |
+| `educationworkforce` | Education - Workforce Training |
+
+#### Energy Base (7)
+| Slug | Label |
+|------|-------|
+| `energybasemajors` | Energy Base - Integrated Energy Majors |
+| `energybasenuclear` | Energy Base - Nuclear Power & Advanced Reactors |
+| `energybaseoilproduction` | Energy Base - Oil & Gas Exploration & Production |
+| `energybaseoilrefining` | Energy Base - Refining & Midstream Infrastructure |
+| `energybaseoilservices` | Energy Base - Oilfield Services & Equipment |
+| `energybasethermal` | Energy Base - Coal & Thermal Power Generation |
+| `energybaseutilities` | Energy Base - Utilities & Conventional Power Operators |
+
+#### Energy Clean (9)
+| Slug | Label |
+|------|-------|
+| `energycleanbatteries` | Energy Clean - Batteries & Storage |
+| `energycleanbiofuels` | Energy Clean - Fuels & Bioenergy |
+| `energycleangeothermal` | Energy Clean - Geothermal |
+| `energycleanhydrogen` | Energy Clean - Hydrogen & Fuel Cells |
+| `energycleanmaterials` | Energy Clean - Materials & Critical Metals |
+| `energycleansmartgrid` | Energy Clean - Smart Grid & Electrification |
+| `energycleansolar` | Energy Clean - Solar |
+| `energycleanutilities` | Energy Clean - Utilities & Clean Power Operators |
+| `energycleanwind` | Energy Clean - Wind |
+
+#### Entertainment (6)
+| Slug | Label |
+|------|-------|
+| `entertainmentbetting` | Entertainment - Sports Betting & Prediction Markets |
+| `entertainmentgambling` | Entertainment - iGaming & Online Gambling |
+| `entertainmentgaming` | Entertainment - Game Publishers & Developers |
+| `entertainmentinfrastructure` | Entertainment - Streaming & Gaming Infrastructure |
+| `entertainmentmusic` | Entertainment - Music & Audio Streaming |
+| `entertainmentvideo` | Entertainment - Video Streaming |
+
+#### Environmental (5)
+| Slug | Label |
+|------|-------|
+| `environmentalagriculture` | Environmental - Sustainable Agriculture |
+| `environmentalairquality` | Environmental - Clean Technologies & Pollution Control |
+| `environmentalclimate` | Environmental - Climate Technologies & Carbon Solutions |
+| `environmentalwaste` | Environmental - Waste Management & Recycling |
+| `environmentalwater` | Environmental - Water Infrastructure & Treatment |
+
+#### EVs (7)
+| Slug | Label |
+|------|-------|
+| `evsbatteries` | EVs - Batteries & Materials |
+| `evscharging` | EVs - Charging & Infrastructure |
+| `evschips` | EVs - Auto Semiconductors & Power Electronics |
+| `evsfleets` | EVs - Fleet Management & Telematics |
+| `evsmanufacturers` | EVs - Manufacturers |
+| `evsselfdriving` | EVs - Autonomous Driving |
+| `evssuppliers` | EVs - Key Suppliers & Autonomy Tech |
+
+#### FinTech (7)
+| Slug | Label |
+|------|-------|
+| `fintechblockchain` | FinTech - Crypto, Blockchain & Tokenization |
+| `fintechexchanges` | FinTech - Exchanges & Market Infrastructure |
+| `fintechinsurance` | FinTech - InsurTech & Embedded Insurance |
+| `fintechlending` | FinTech - Lending, Credit & BNPL |
+| `fintechneobanks` | FinTech - Digital Banking & Neobanks |
+| `fintechpayments` | FinTech - Digital Payments & Merchant Infrastructure |
+| `fintechtrading` | FinTech - Trading Platforms & WealthTech |
+
+#### Hardware (11)
+| Slug | Label |
+|------|-------|
+| `hardwaredatacenters` | Hardware - Data Center Infrastructure |
+| `hardwareelectronics` | Hardware - Consumer Electronics |
+| `hardwaregaming` | Hardware - Gaming & Immersive Peripherals |
+| `hardwareindustrialiot` | Hardware - Industrial & IoT |
+| `hardwarenetworking` | Hardware - Networking Equipment |
+| `hardwarenextgen` | Hardware - Next-Gen & Specialty |
+| `hardwarepcsdevices` | Hardware - Personal Computing & Devices |
+| `hardwareprinting` | Hardware - Printing & Imaging |
+| `hardwareservers` | Hardware - Servers, OEMs & Enterprise Systems |
+| `hardwarestorage` | Hardware - Storage |
+| `hardwaretelecom` | Hardware - Communications & Telecom |
+
+#### Healthcare (9)
+| Slug | Label |
+|------|-------|
+| `healthcaredevices` | Healthcare - Medical Devices & HealthTech Hardware |
+| `healthcarediagnostics` | Healthcare - Diagnostics & Liquid Biopsy |
+| `healthcaregenomics` | Healthcare - Genomics & Personalized Medicine |
+| `healthcareitdata` | Healthcare - IT, Services & Data Infrastructure |
+| `healthcaremetabolic` | Healthcare - Metabolic & Cardiometabolic |
+| `healthcarenextgen` | Healthcare - Next-Gen Biotech Platforms |
+| `healthcareoncology` | Healthcare - Oncology & Precision Cancer Therapeutics |
+| `healthcaretelemedicine` | Healthcare - Digital Health & Telemedicine |
+| `healthcaretherapeutics` | Healthcare - Regenerative Medicine & Psychedelics |
+
+#### IoT (6)
+| Slug | Label |
+|------|-------|
+| `iotedgedevices` | IoT - Connected Devices & Sensors |
+| `iotenterprise` | IoT - Industrial & Enterprise IoT |
+| `iothardware` | IoT - Edge Computing & Hardware Infrastructure |
+| `iotnetworking` | IoT - Connectivity & Networks |
+| `iotsecurity` | IoT - Security & Data Management |
+| `iotsoftware` | IoT - Platforms, Software & Analytics |
+
+#### Longevity (4)
+| Slug | Label |
+|------|-------|
+| `longevityagingpharma` | Longevity - Age-Related Pharmaceuticals & Biotech |
+| `longevityhealthcare` | Longevity - Healthcare & Medical Devices |
+| `longevityhealthyaging` | Longevity - Healthy Aging & Nutrition |
+| `longevityseniorliving` | Longevity - Senior Living & Assisted Care |
+
+#### NanoTech (6)
+| Slug | Label |
+|------|-------|
+| `nanotechelectronics` | NanoTech - Nanoelectronics & Semiconductors |
+| `nanotechenergy` | NanoTech - Energy & Environment |
+| `nanotechmaterials` | NanoTech - Nanomaterials & Manufacturing |
+| `nanotechmedicine` | NanoTech - Nanomedicine & Drug Delivery |
+| `nanotechproducts` | NanoTech - Consumer & Industrial Products |
+| `nanotechresearchtools` | NanoTech - Research Tools & Advanced Instruments |
+
+#### Nutrition (4)
+| Slug | Label |
+|------|-------|
+| `nutritionaltprotein` | Nutrition - Plant-Based Foods & Meat Alternatives |
+| `nutritionmealdelivery` | Nutrition - Food Delivery & Meal Kits |
+| `nutritionretailers` | Nutrition - Organic & Natural Food Retailers |
+| `nutritionsupplements` | Nutrition - Functional & Nutritional Supplements |
+
+#### Quantum (6)
+| Slug | Label |
+|------|-------|
+| `quantumapplications` | Quantum - Applications |
+| `quantumcloud` | Quantum - Cloud Ecosystems |
+| `quantumenablingtech` | Quantum - Enabling Technologies |
+| `quantumhardware` | Quantum - Hardware Platforms |
+| `quantumnetworking` | Quantum - Networking & Security |
+| `quantumsoftware` | Quantum - Software & Tools |
+
+#### Real Estate (7)
+| Slug | Label |
+|------|-------|
+| `realestatehealthcare` | Real Estate - Healthcare & Senior Living |
+| `realestatehousing` | Real Estate - Housing & Urban Living |
+| `realestateittelecom` | Real Estate - Digital Infrastructure |
+| `realestateoffice` | Real Estate - Office & Commercial Workspaces |
+| `realestateretail` | Real Estate - Retail & Consumer Real Estate |
+| `realestatetourism` | Real Estate - Travel & Entertainment Properties |
+| `realestatewarehousing` | Real Estate - E-Commerce & Logistics |
+
+#### Robotics (6)
+| Slug | Label |
+|------|-------|
+| `roboticsautomation` | Robotics - Industrial Automation |
+| `roboticsavmobility` | Robotics - Autonomous Vehicles & Mobility |
+| `roboticsconsumer` | Robotics - Service & Consumer Robotics |
+| `roboticslogistics` | Robotics - Logistics & Warehouse Robotics |
+| `roboticsmachinevision` | Robotics - Sensors & Vision Systems |
+| `roboticsmedical` | Robotics - Medical & Surgical Robotics |
+
+#### Semis (9)
+| Slug | Label |
+|------|-------|
+| `semisanalog` | Semis - Analog, Mixed-Signal & Power Management |
+| `semiscompute` | Semis - Logic & CPUs, GPUs, Accelerators |
+| `semisdesigntools` | Semis - EDA Tools & Design Software |
+| `semisfoundries` | Semis - Foundries & Manufacturing |
+| `semislithography` | Semis - Equipment, Lithography & Deposition |
+| `semismemory` | Semis - Memory & Storage |
+| `semisnextgen` | Semis - Emerging Technologies |
+| `semispackaging` | Semis - Testing, Packaging & Assembly |
+| `semiswireless` | Semis - Wireless & Connectivity |
+
+#### Smart Home (6)
+| Slug | Label |
+|------|-------|
+| `smarthomeautomation` | Smart Home - Automation & Control Systems |
+| `smarthomedevices` | Smart Home - Connected Devices & Appliances |
+| `smarthomeenergy` | Smart Home - Energy & Utilities |
+| `smarthomenetworking` | Smart Home - Connectivity & Networking |
+| `smarthomesecurity` | Smart Home - Security & Monitoring |
+| `smarthomevoiceai` | Smart Home - Voice Assistants & AI Integration |
+
+#### Social (5)
+| Slug | Label |
+|------|-------|
+| `socialadvertising` | Social - Advertising Platforms |
+| `socialgaming` | Social - Gaming Platforms |
+| `socialnetworks` | Social - Networks & Communication Platforms |
+| `socialniche` | Social - Niche Platforms |
+| `socialvisualcontent` | Social - Image & Video Content Platforms |
+
+#### Software (12)
+| Slug | Label |
+|------|-------|
+| `softwarecollaboration` | Software - Collaboration & Communications |
+| `softwarecrm` | Software - Customer Relationship Management & Marketing |
+| `softwaredataanalytics` | Software - Data & Analytics |
+| `softwaredesign` | Software - Design, Creativity & Engineering |
+| `softwaredevops` | Software - DevOps, Management & Observability |
+| `softwareecommerce` | Software - E-Commerce & Digital Platforms |
+| `softwareenterprise` | Software - Enterprise Resource Planning & Management |
+| `softwaregaming` | Software - Gaming & Platforms |
+| `softwarehsaas` | Software - Horizontal SaaS Platforms |
+| `softwareos` | Software - Operating Systems |
+| `softwaresecurity` | Software - Cybersecurity |
+| `softwarevsaas` | Software - Vertical SaaS Platforms |
+
+#### Space (5)
+| Slug | Label |
+|------|-------|
+| `spacedataanalytics` | Space - Data Analytics & Earth Observation |
+| `spacedefense` | Space - Defense & Cybersecurity |
+| `spaceinfrastructure` | Space - Infrastructure & Exploration |
+| `spacelaunch` | Space - Logistics & Launch Services |
+| `spacesatellites` | Space - Satellite Networks & Connectivity |
+
+#### Telecom (6)
+| Slug | Label |
+|------|-------|
+| `telecomcloudedge` | Telecom - Cloud & Edge Connectivity |
+| `telecomenterprise` | Telecom - Enterprise & Unified Communications |
+| `telecomg` | Telecom - 5G Technology & Semiconductors |
+| `telecominfrastructure` | Telecom - Infrastructure & Equipment |
+| `telecomsatcom` | Telecom - Satellite & Space Communication |
+| `telecomwireless` | Telecom - Wireless Networks & Carriers |
+
+#### Transportation (8)
+| Slug | Label |
+|------|-------|
+| `transportationaircargo` | Transportation - Air Freight & Express Delivery |
+| `transportationairtravel` | Transportation - Air Travel & Passenger Transportation |
+| `transportationinfrastructure` | Transportation - Infrastructure & Equipment |
+| `transportationmaritime` | Transportation - Marine Shipping & Ports |
+| `transportationnextgen` | Transportation - Urban Mobility & Emerging Transport Tech |
+| `transportationrail` | Transportation - Freight Rail & Infrastructure |
+| `transportationtrucking` | Transportation - Trucking, LTL & Ground Freight |
+| `transportationwarehousing` | Transportation - Logistics & Supply Chain Solutions |
+
+#### V/A Reality (5)
+| Slug | Label |
+|------|-------|
+| `varealityapplications` | V/A Reality - Content & Applications |
+| `varealityenterprise` | V/A Reality - Enterprise & Industrial Solutions |
+| `varealityhardware` | V/A Reality - Headsets & Hardware |
+| `varealityinfrastructure` | V/A Reality - Infrastructure & Cloud Rendering |
+| `varealitysoftware` | V/A Reality - Software Platforms & Operating Systems |
+
+#### Wearables (5)
+| Slug | Label |
+|------|-------|
+| `wearablesimmersive` | Wearables - Audio-Visual Immersive Devices |
+| `wearablesmedical` | Wearables - Health Monitoring & Medical Devices |
+| `wearablessmartwatches` | Wearables - Smartwatches & Fitness Devices |
+| `wearablessoftware` | Wearables - Software & Ecosystems |
+| `wearablessport` | Wearables - Sports, Fitness & Lifestyle Applications |
 
 ---
 
@@ -1517,12 +1939,20 @@ Large-cap+ down 20%+ from 52W high, RSI under 40, profitable, liquid.
 ### AI Theme (AIテーマ)
 
 ```
-
-f=theme_artificialintelligence,cap_midover,ta_perf_13wup
-
+--themes "artificialintelligence" --filters "cap_midover,ta_perf_13wup"
+# URL: f=theme_artificialintelligence,cap_midover,ta_perf_13wup
 ```
 
 AI-themed stocks, mid-cap+, up this quarter.
+
+### AI Cloud + Compute Sub-themes (AIクラウド＆コンピュート)
+
+```
+--themes "artificialintelligence" --subthemes "aicloud,aicompute" --filters "cap_midover"
+# URL: f=theme_artificialintelligence,subtheme_aicloud%7Caicompute,cap_midover
+```
+
+AI theme with cloud and compute sub-theme drill-down, mid-cap+.
 
 
 ### Earnings Positive Surprise (決算好調)
