@@ -22,6 +22,9 @@ strategy-reviewerエージェントでセカンドオピニオンを取得。
 
 <span class="badge badge-free">No API</span>
 
+[Download Skill Package (.skill)](https://github.com/tradermonty/claude-trading-skills/raw/main/skill-packages/scenario-analyzer.skill){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
+[View Source on GitHub](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/scenario-analyzer){: .btn .fs-5 .mb-4 .mb-md-0 }
+
 <details open markdown="block">
   <summary>Table of Contents</summary>
   {: .text-delta }

@@ -22,4 +22,7 @@ Fetch upcoming economic events and data releases using FMP API. Retrieve schedul
 
 ---
 
+[スキルパッケージをダウンロード (.skill)](https://github.com/tradermonty/claude-trading-skills/raw/main/skill-packages/economic-calendar-fetcher.skill){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
+[GitHubでソースを見る](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/economic-calendar-fetcher){: .btn .fs-5 .mb-4 .mb-md-0 }
+
 [English版ガイドを見る]({{ '/en/skills/economic-calendar-fetcher/' | relative_url }}){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }

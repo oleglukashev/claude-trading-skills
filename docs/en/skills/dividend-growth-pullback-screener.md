@@ -16,6 +16,9 @@ Use this skill to find high-quality dividend growth stocks (12%+ annual dividend
 
 <span class="badge badge-api">FMP Required</span> <span class="badge badge-optional">FINVIZ Optional</span>
 
+[Download Skill Package (.skill)](https://github.com/tradermonty/claude-trading-skills/raw/main/skill-packages/dividend-growth-pullback-screener.skill){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
+[View Source on GitHub](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/dividend-growth-pullback-screener){: .btn .fs-5 .mb-4 .mb-md-0 }
+
 <details open markdown="block">
   <summary>Table of Contents</summary>
   {: .text-delta }

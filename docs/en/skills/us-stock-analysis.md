@@ -14,6 +14,9 @@ permalink: /en/skills/us-stock-analysis/
 Perform comprehensive US stock analysis covering fundamental financials, technical indicators, valuation, peer comparisons, and structured investment reports with Buy/Hold/Sell recommendations.
 {: .fs-6 .fw-300 }
 
+[Download Skill Package (.skill)](https://github.com/tradermonty/claude-trading-skills/raw/main/skill-packages/us-stock-analysis.skill){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
+[View Source on GitHub](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/us-stock-analysis){: .btn .fs-5 .mb-4 .mb-md-0 }
+
 <details open markdown="block">
   <summary>Table of Contents</summary>
   {: .text-delta }

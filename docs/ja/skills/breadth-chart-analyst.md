@@ -22,4 +22,7 @@ This skill should be used when analyzing market breadth charts, specifically the
 
 ---
 
+[スキルパッケージをダウンロード (.skill)](https://github.com/tradermonty/claude-trading-skills/raw/main/skill-packages/breadth-chart-analyst.skill){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
+[GitHubでソースを見る](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/breadth-chart-analyst){: .btn .fs-5 .mb-4 .mb-md-0 }
+
 [English版ガイドを見る]({{ '/en/skills/breadth-chart-analyst/' | relative_url }}){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }

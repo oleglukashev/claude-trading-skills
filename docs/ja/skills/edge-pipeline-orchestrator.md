@@ -22,4 +22,7 @@ Orchestrate the full edge research pipeline from candidate detection through str
 
 ---
 
+[スキルパッケージをダウンロード (.skill)](https://github.com/tradermonty/claude-trading-skills/raw/main/skill-packages/edge-pipeline-orchestrator.skill){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
+[GitHubでソースを見る](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/edge-pipeline-orchestrator){: .btn .fs-5 .mb-4 .mb-md-0 }
+
 [English版ガイドを見る]({{ '/en/skills/edge-pipeline-orchestrator/' | relative_url }}){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }

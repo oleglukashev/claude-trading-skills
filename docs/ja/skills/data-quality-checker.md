@@ -22,4 +22,7 @@ Validate data quality in market analysis documents and blog articles before publ
 
 ---
 
+[スキルパッケージをダウンロード (.skill)](https://github.com/tradermonty/claude-trading-skills/raw/main/skill-packages/data-quality-checker.skill){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
+[GitHubでソースを見る](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/data-quality-checker){: .btn .fs-5 .mb-4 .mb-md-0 }
+
 [English版ガイドを見る]({{ '/en/skills/data-quality-checker/' | relative_url }}){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }

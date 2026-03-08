@@ -16,6 +16,9 @@ This skill retrieves upcoming earnings announcements for US stocks using the Fin
 
 <span class="badge badge-api">FMP Required</span>
 
+[Download Skill Package (.skill)](https://github.com/tradermonty/claude-trading-skills/raw/main/skill-packages/earnings-calendar.skill){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
+[View Source on GitHub](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/earnings-calendar){: .btn .fs-5 .mb-4 .mb-md-0 }
+
 <details open markdown="block">
   <summary>Table of Contents</summary>
   {: .text-delta }

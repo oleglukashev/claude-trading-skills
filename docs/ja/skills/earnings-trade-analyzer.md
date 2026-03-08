@@ -22,4 +22,7 @@ Analyze recent post-earnings stocks using a 5-factor scoring system (Gap Size, P
 
 ---
 
+[スキルパッケージをダウンロード (.skill)](https://github.com/tradermonty/claude-trading-skills/raw/main/skill-packages/earnings-trade-analyzer.skill){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
+[GitHubでソースを見る](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/earnings-trade-analyzer){: .btn .fs-5 .mb-4 .mb-md-0 }
+
 [English版ガイドを見る]({{ '/en/skills/earnings-trade-analyzer/' | relative_url }}){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }

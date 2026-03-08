@@ -16,6 +16,9 @@ permalink: /ja/skills/market-news-analyst/
 
 <span class="badge badge-free">API不要</span>
 
+[スキルパッケージをダウンロード (.skill)](https://github.com/tradermonty/claude-trading-skills/raw/main/skill-packages/market-news-analyst.skill){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
+[GitHubでソースを見る](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/market-news-analyst){: .btn .fs-5 .mb-4 .mb-md-0 }
+
 <details open markdown="block">
   <summary>目次</summary>
   {: .text-delta }

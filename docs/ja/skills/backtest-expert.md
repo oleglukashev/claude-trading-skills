@@ -16,6 +16,9 @@ permalink: /ja/skills/backtest-expert/
 
 <span class="badge badge-free">API不要</span>
 
+[スキルパッケージをダウンロード (.skill)](https://github.com/tradermonty/claude-trading-skills/raw/main/skill-packages/backtest-expert.skill){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
+[GitHubでソースを見る](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/backtest-expert){: .btn .fs-5 .mb-4 .mb-md-0 }
+
 <details open markdown="block">
   <summary>目次</summary>
   {: .text-delta }

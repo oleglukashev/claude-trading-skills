@@ -16,6 +16,9 @@ Options trading strategy analysis and simulation tool. Provides theoretical pric
 
 <span class="badge badge-free">No API</span> <span class="badge badge-optional">FMP Optional</span>
 
+[Download Skill Package (.skill)](https://github.com/tradermonty/claude-trading-skills/raw/main/skill-packages/options-strategy-advisor.skill){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
+[View Source on GitHub](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/options-strategy-advisor){: .btn .fs-5 .mb-4 .mb-md-0 }
+
 <details open markdown="block">
   <summary>Table of Contents</summary>
   {: .text-delta }

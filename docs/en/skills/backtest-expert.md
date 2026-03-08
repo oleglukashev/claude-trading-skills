@@ -14,6 +14,9 @@ permalink: /en/skills/backtest-expert/
 Expert guidance for systematic backtesting of trading strategies. Scores backtest quality across 5 dimensions (0-100), detects 10+ red flags, and delivers a Deploy/Refine/Abandon verdict. Core philosophy: find strategies that break the least.
 {: .fs-6 .fw-300 }
 
+[Download Skill Package (.skill)](https://github.com/tradermonty/claude-trading-skills/raw/main/skill-packages/backtest-expert.skill){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
+[View Source on GitHub](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/backtest-expert){: .btn .fs-5 .mb-4 .mb-md-0 }
+
 <details open markdown="block">
   <summary>Table of Contents</summary>
   {: .text-delta }

@@ -14,6 +14,9 @@ permalink: /en/skills/market-news-analyst/
 Analyze recent market-moving news events from the past 10 days, rank them by quantitative impact score, and assess multi-asset reactions across equities, bonds, commodities, and currencies.
 {: .fs-6 .fw-300 }
 
+[Download Skill Package (.skill)](https://github.com/tradermonty/claude-trading-skills/raw/main/skill-packages/market-news-analyst.skill){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
+[View Source on GitHub](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/market-news-analyst){: .btn .fs-5 .mb-4 .mb-md-0 }
+
 <details open markdown="block">
   <summary>Table of Contents</summary>
   {: .text-delta }

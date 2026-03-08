@@ -14,6 +14,9 @@ permalink: /en/skills/us-market-bubble-detector/
 Evaluate market bubble risk through a data-driven Minsky/Kindleberger v2.1 framework with two-phase scoring: 6 quantitative indicators (0-12 points) plus 3 strict qualitative adjustments (0-3 points) for a total 0-15 scale.
 {: .fs-6 .fw-300 }
 
+[Download Skill Package (.skill)](https://github.com/tradermonty/claude-trading-skills/raw/main/skill-packages/us-market-bubble-detector.skill){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
+[View Source on GitHub](https://github.com/tradermonty/claude-trading-skills/tree/main/skills/us-market-bubble-detector){: .btn .fs-5 .mb-4 .mb-md-0 }
+
 <details open markdown="block">
   <summary>Table of Contents</summary>
   {: .text-delta }
