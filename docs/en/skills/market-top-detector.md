@@ -196,3 +196,4 @@ Present the generated Markdown report to the user, highlighting:
 - `skills/market-top-detector/scripts/report_generator.py`
 - `skills/market-top-detector/scripts/scenario_engine.py`
 - `skills/market-top-detector/scripts/scorer.py`
+- `skills/market-top-detector/scripts/utils.py`

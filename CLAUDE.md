@@ -114,7 +114,7 @@ Skills are packaged as ZIP files for Claude web app users:
 
 ```bash
 # Use the skill-creator's packaging script
-python3 ~/.claude/plugins/marketplaces/anthropic-agent-skills/skill-creator/scripts/package_skill.py <skill-name>
+python3 ~/.claude/plugins/marketplaces/anthropic-agent-skills/skills/skill-creator/scripts/package_skill.py <skill-name>
 ```
 
 The packaged .skill files are stored in `skill-packages/` and should be regenerated after any skill modifications.
